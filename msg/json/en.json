@@ -1,7 +1,7 @@
 {
-    "CONTROL_FOREVER": "forever",
-    "CONTROL_REPEAT": "repeat %1",
-    "CONTROL_IF": "if %1 then",
+    "CONTROL_FOREVER": "while True:",
+    "CONTROL_REPEAT": "for in %1",
+    "CONTROL_IF": "if ( %1 ) :",
     "CONTROL_ELSE": "else",
     "CONTROL_STOP": "stop",
     "CONTROL_STOP_ALL": "all",

@@ -5,9 +5,9 @@
 goog.provide('Blockly.Msg.en');
 goog.require('Blockly.Msg');
 
-Blockly.Msg["CONTROL_FOREVER"] = "forever";
-Blockly.Msg["CONTROL_REPEAT"] = "repeat %1";
-Blockly.Msg["CONTROL_IF"] = "if %1 then";
+Blockly.Msg["CONTROL_FOREVER"] = "while True:";
+Blockly.Msg["CONTROL_REPEAT"] = "for in %1";
+Blockly.Msg["CONTROL_IF"] = "if ( %1 ) :";
 Blockly.Msg["CONTROL_ELSE"] = "else";
 Blockly.Msg["CONTROL_STOP"] = "stop";
 Blockly.Msg["CONTROL_STOP_ALL"] = "all";
