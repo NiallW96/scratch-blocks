@@ -88,6 +88,13 @@ Blockly.Blocks['event_whenflagclicked'] = {
           "alt": "flag"
         }
       ],
+      "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
+      "args1": [
+	{
+          "type": "input_value",
+          "name": "NAME"
+	}
+      ],
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]
     });
@@ -102,6 +109,13 @@ Blockly.Blocks['event_whenthisspriteclicked'] = {
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.EVENT_WHENTHISSPRITECLICKED,
+      "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
+      "args1": [
+	{
+          "type": "input_value",
+          "name": "NAME"
+	}
+      ],
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]
     });
@@ -117,6 +131,13 @@ Blockly.Blocks['event_whenstageclicked'] = {
   init: function() {
     this.jsonInit({
       "message0": Blockly.Msg.EVENT_WHENSTAGECLICKED,
+      "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
+      "args1": [
+	{
+          "type": "input_value",
+          "name": "NAME"
+	}
+      ],
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]
     });
@@ -140,6 +161,13 @@ Blockly.Blocks['event_whenbroadcastreceived'] = {
           "variable": Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME
         }
       ],
+      "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
+      "args1": [
+	{
+          "type": "input_value",
+          "name": "NAME"
+	}
+      ],
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]
     });
@@ -162,6 +190,13 @@ Blockly.Blocks['event_whenbackdropswitchesto'] = {
             ['backdrop1', 'BACKDROP1']
           ]
         }
+      ],
+      "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
+      "args1": [
+	{
+          "type": "input_value",
+          "name": "NAME"
+	}
       ],
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]
@@ -190,6 +225,13 @@ Blockly.Blocks['event_whengreaterthan'] = {
           "type": "input_value",
           "name": "VALUE"
         }
+      ],
+      "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
+      "args1": [
+	{
+          "type": "input_value",
+          "name": "NAME"
+	}
       ],
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]
@@ -320,6 +362,13 @@ Blockly.Blocks['event_whenkeypressed'] = {
             ['9', '9']
           ]
         }
+      ],
+      "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
+      "args1": [
+	{
+          "type": "input_value",
+          "name": "NAME"
+	}
       ],
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]

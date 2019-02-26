@@ -390,6 +390,13 @@ Blockly.Blocks['control_start_as_clone'] = {
       "message0": Blockly.Msg.CONTROL_STARTASCLONE,
       "args0": [
       ],
+      "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
+      "args1": [
+	{
+          "type": "input_value",
+          "name": "NAME"
+	}
+      ],
       "category": Blockly.Categories.control,
       "extensions": ["colours_control", "shape_hat"]
     });
