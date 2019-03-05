@@ -32,6 +32,8 @@ goog.require('Blockly.constants');
 // TODO: Create a namespace properly.
 Blockly.ScratchBlocks.ProcedureUtils = {};
 
+Blockly.ScratchBlocks.ProcedureUtils.numberLabels = 0;
+
 // Serialization and deserialization.
 
 /**
@@ -73,6 +75,19 @@ Blockly.ScratchBlocks.ProcedureUtils.callerDomToMutation = function(xmlElement) 
  */
 Blockly.ScratchBlocks.ProcedureUtils.definitionMutationToDom = function(
     opt_generateShadows) {
+/*  var procComponents = this.procCode_.split(/(?=[^\\]%[nbs])/);
+  procComponents = procComponents.map(function(c) {
+    return c.trim(); // Strip whitespace.
+  });
+  var commaLabel = " ,";
+  var newProcComponents = procComponents.slice();
+  for(var i = 0, component; component = procComponents[i]; i++){
+      if (component.substring(0, 1) == '%' && i + 1 < procComponents.length) {
+         var argumentType = component.substring(1, 2);
+         newProcComponents.splice(i + 1, 0, commaLabel);
+      }
+  }
+  this.procCode_ = newProcComponents.join(" ");*/
   var container = document.createElement('mutation');
 
   if (opt_generateShadows) {
@@ -593,6 +608,9 @@ Blockly.ScratchBlocks.ProcedureUtils.updateDeclarationProcCode_ = function() {
 Blockly.ScratchBlocks.ProcedureUtils.focusLastEditor_ = function() {
   if (this.inputList.length > 0) {
     var newInput = this.inputList[this.inputList.length - 1];
+    if(this.inputList.length > 2) {
+        newInput = this.inputList[this.inputList.length - 2];
+    }
     if (newInput.type == Blockly.DUMMY_INPUT) {
       newInput.fieldRow[0].showEditor_();
     } else if (newInput.type == Blockly.INPUT_VALUE) {
@@ -608,10 +626,14 @@ Blockly.ScratchBlocks.ProcedureUtils.focusLastEditor_ = function() {
  * @public
  */
 Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal = function() {
-  Blockly.WidgetDiv.hide(true);
-  this.procCode_ = this.procCode_ + ' label text';
-  this.updateDisplay_();
-  this.focusLastEditor_();
+  if(this.numberLabel < 1){
+    Blockly.WidgetDiv.hide(true);
+    this.procCode_ = this.procCode_ + ' label text';
+    this.updateDisplay_();
+    this.focusLastEditor_();
+    this.numberLabel += 1;
+  }
+  
 };
 
 /**
@@ -621,7 +643,16 @@ Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal = function() {
  */
 Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
   Blockly.WidgetDiv.hide(true);
-  this.procCode_ = this.procCode_ + ' %b';
+  if(this.displayNames_.length >= 1){
+     if(this.procCode_.endsWith(" )")){
+         this.procCode_ = this.procCode_.substring(0, this.procCode_.length - 2);
+     }
+     this.procCode_ = this.procCode_ + ' ,';
+  }
+  else{
+     this.procCode_ = this.procCode_ + " ( ";
+  }
+  this.procCode_ = this.procCode_ + ' %b )';
   this.displayNames_.push('boolean');
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('false');
@@ -636,7 +667,16 @@ Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
  */
 Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal = function() {
   Blockly.WidgetDiv.hide(true);
-  this.procCode_ = this.procCode_ + ' %s';
+  if(this.displayNames_.length >= 1){
+     if(this.procCode_.endsWith(" )")){
+         this.procCode_ = this.procCode_.substring(0, this.procCode_.length - 2);
+     }
+     this.procCode_ = this.procCode_ + ' ,';
+  }
+  else{
+     this.procCode_ = this.procCode_ + " ( ";
+  }
+  this.procCode_ = this.procCode_ + ' %s )';
   this.displayNames_.push('number or text');
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('');
