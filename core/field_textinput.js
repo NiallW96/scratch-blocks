@@ -219,7 +219,7 @@ Blockly.FieldTextInput.prototype.showEditor_ = function(
     opt_quietInput, opt_readOnly, opt_withArrow, opt_arrowCallback) {
   this.workspace_ = this.sourceBlock_.workspace;
   var quietInput = opt_quietInput || false;
-  var readOnly = opt_readOnly || false || this.text_ === "," || this.text === "(" || this.text === ")";
+  var readOnly = opt_readOnly || false || this.text_ === "," || this.text === "(" || this.text === ")" || this.text === ", self )";
   Blockly.WidgetDiv.show(this, this.sourceBlock_.RTL,
       this.widgetDispose_(), this.widgetDisposeAnimationFinished_(),
       Blockly.FieldTextInput.ANIMATION_TIME);

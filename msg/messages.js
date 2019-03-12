@@ -59,8 +59,8 @@ Blockly.Msg.CONTROL_ALLATONCE = 'all at once';
 // Data blocks
 Blockly.Msg.DATA_SETVARIABLETO = 'stage.set(%1, %2)';
 Blockly.Msg.DATA_CHANGEVARIABLEBY = 'stage.change_by(%1, %2)';
-Blockly.Msg.DATA_SHOWVARIABLE = 'self.show_variable(%1)';
-Blockly.Msg.DATA_HIDEVARIABLE = 'self.hide_variable(%1)';
+Blockly.Msg.DATA_SHOWVARIABLE = 'stage.show_variable(%1)';
+Blockly.Msg.DATA_HIDEVARIABLE = 'stage.hide_variable(%1)';
 Blockly.Msg.DATA_ADDTOLIST = '%2.append(%1)';
 Blockly.Msg.DATA_DELETEOFLIST = '%2.pop(%1)';
 Blockly.Msg.DATA_DELETEALLOFLIST = '%1.clear()';
@@ -70,8 +70,8 @@ Blockly.Msg.DATA_ITEMOFLIST = '%2[%1]';
 Blockly.Msg.DATA_ITEMNUMOFLIST = '%2.index(%1)';
 Blockly.Msg.DATA_LENGTHOFLIST = 'len(%1)';
 Blockly.Msg.DATA_LISTCONTAINSITEM = '%2 in %1';
-Blockly.Msg.DATA_SHOWLIST = 'self.show_list(%1)';
-Blockly.Msg.DATA_HIDELIST = 'self.hide_list(%1)';
+Blockly.Msg.DATA_SHOWLIST = 'stage.show_list(%1)';
+Blockly.Msg.DATA_HIDELIST = 'stage.hide_list(%1)';
 Blockly.Msg.DATA_INDEX_ALL = 'all';
 Blockly.Msg.DATA_INDEX_LAST = 'last';
 Blockly.Msg.DATA_INDEX_RANDOM = 'random';
@@ -331,7 +331,7 @@ Blockly.Msg.DELETE_VARIABLE = 'Delete the "%1" variable';
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
 Blockly.Msg.NEW_PROCEDURE = 'Make a Block';
 Blockly.Msg.PROCEDURE_ALREADY_EXISTS = 'A procedure named "%1" already exists.';
-Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'block name';
+Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'block_name';
 
 // Lists
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI

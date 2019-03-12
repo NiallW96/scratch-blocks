@@ -308,12 +308,13 @@ Blockly.Variables.createVariable = function(workspace, opt_callback, opt_type) {
         // Only use additionalVars for global variable creation.
         var additionalVarNames = isLocal ? [] : additionalVars;
 	
-	if(isLocal){
+	if(scope === 'local'){
 	    text = "self." + text;
 	}
 	else{
             text = "stage." + text;
 	}
+	text = text.replace(" ", "_");
 
         var validatedText = validate(text, workspace, additionalVarNames, isCloud, opt_callback);
         if (validatedText) {

@@ -75,19 +75,6 @@ Blockly.ScratchBlocks.ProcedureUtils.callerDomToMutation = function(xmlElement) 
  */
 Blockly.ScratchBlocks.ProcedureUtils.definitionMutationToDom = function(
     opt_generateShadows) {
-/*  var procComponents = this.procCode_.split(/(?=[^\\]%[nbs])/);
-  procComponents = procComponents.map(function(c) {
-    return c.trim(); // Strip whitespace.
-  });
-  var commaLabel = " ,";
-  var newProcComponents = procComponents.slice();
-  for(var i = 0, component; component = procComponents[i]; i++){
-      if (component.substring(0, 1) == '%' && i + 1 < procComponents.length) {
-         var argumentType = component.substring(1, 2);
-         newProcComponents.splice(i + 1, 0, commaLabel);
-      }
-  }
-  this.procCode_ = newProcComponents.join(" ");*/
   var container = document.createElement('mutation');
 
   if (opt_generateShadows) {
@@ -644,15 +631,15 @@ Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal = function() {
 Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
   Blockly.WidgetDiv.hide(true);
   if(this.displayNames_.length >= 1){
-     if(this.procCode_.endsWith(" )")){
-         this.procCode_ = this.procCode_.substring(0, this.procCode_.length - 2);
+     if(this.procCode_.endsWith(", self )")){
+         this.procCode_ = this.procCode_.replace(", self )", "");
      }
      this.procCode_ = this.procCode_ + ' ,';
   }
-  else{
-     this.procCode_ = this.procCode_ + " ( ";
+  else if(this.procCode_.endsWith(" self )")){
+     this.procCode_ = this.procCode_.replace(" self )", "");
   }
-  this.procCode_ = this.procCode_ + ' %b )';
+  this.procCode_ = this.procCode_ + ' %b , self )';
   this.displayNames_.push('boolean');
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('false');
@@ -668,15 +655,16 @@ Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
 Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal = function() {
   Blockly.WidgetDiv.hide(true);
   if(this.displayNames_.length >= 1){
-     if(this.procCode_.endsWith(" )")){
-         this.procCode_ = this.procCode_.substring(0, this.procCode_.length - 2);
+     if(this.procCode_.endsWith(", self )")){
+         this.procCode_ = this.procCode_.replace(", self )", "");
      }
      this.procCode_ = this.procCode_ + ' ,';
   }
-  else{
-     this.procCode_ = this.procCode_ + " ( ";
+  else if(this.procCode_.endsWith(" self )")){
+     this.procCode_ = this.procCode_.replace(" self )", "");
   }
-  this.procCode_ = this.procCode_ + ' %s )';
+ 
+  this.procCode_ = this.procCode_ + ' %s , self )';
   this.displayNames_.push('number or text');
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('');
