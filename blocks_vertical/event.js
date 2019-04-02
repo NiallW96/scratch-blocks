@@ -79,7 +79,7 @@ Blockly.Blocks['event_whenflagclicked'] = {
     this.jsonInit({
       "id": "event_whenflagclicked",
       "message0": Blockly.Msg.EVENT_WHENFLAGCLICKED,
-      "args0": [
+      /*"args0": [
         {
           "type": "field_image",
           "src": Blockly.mainWorkspace.options.pathToMedia + "green-flag.svg",
@@ -87,7 +87,7 @@ Blockly.Blocks['event_whenflagclicked'] = {
           "height": 24,
           "alt": "flag"
         }
-      ],
+      ],*/
       "message1": Blockly.Msg.START_PROCEDURES_DEFINITION,
       "args1": [
 	{
@@ -95,6 +95,7 @@ Blockly.Blocks['event_whenflagclicked'] = {
           "name": "NAME"
 	}
       ],
+      "inputsInline": false,
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]
     });

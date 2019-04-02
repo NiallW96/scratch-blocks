@@ -35,7 +35,7 @@ goog.require('Blockly.Msg');
 
 // Control blocks
 Blockly.Msg.CONTROL_FOREVER = 'while True:';
-Blockly.Msg.CONTROL_REPEAT = 'for x in range(1, %1):';
+Blockly.Msg.CONTROL_REPEAT = 'for _ in range(1, %1):';
 Blockly.Msg.CONTROL_IF = 'if %1:';
 Blockly.Msg.CONTROL_ELSE = 'else:';
 Blockly.Msg.CONTROL_STOP = 'stage.stop';
@@ -77,7 +77,7 @@ Blockly.Msg.DATA_INDEX_LAST = 'last';
 Blockly.Msg.DATA_INDEX_RANDOM = 'random';
 
 // Event blocks
-Blockly.Msg.EVENT_WHENFLAGCLICKED = '@event %1 clicked';
+Blockly.Msg.EVENT_WHENFLAGCLICKED = '@event when flag clicked';
 Blockly.Msg.EVENT_WHENTHISSPRITECLICKED = '@event this sprite clicked';
 Blockly.Msg.EVENT_WHENSTAGECLICKED = '@event stage clicked';
 Blockly.Msg.EVENT_WHENTOUCHINGOBJECT = '@event sprite touched %1';
@@ -95,6 +95,7 @@ Blockly.Msg.EVENT_WHENKEYPRESSED_RIGHT = 'right arrow';
 Blockly.Msg.EVENT_WHENKEYPRESSED_DOWN = 'down arrow';
 Blockly.Msg.EVENT_WHENKEYPRESSED_UP = 'up arrow';
 Blockly.Msg.EVENT_WHENKEYPRESSED_ANY = 'any';
+Blockly.Msg.EVENT_DEFAULT_NAME = 'script_name';
 
 // Looks blocks
 Blockly.Msg.LOOKS_SAYFORSECS = 'self.say_for(%1, %2)';
@@ -143,7 +144,7 @@ Blockly.Msg.LOOKS_RANDOMBACKDROP = 'random backdrop';
 // Motion blocks
 Blockly.Msg.MOTION_MOVESTEPS = 'self.move_steps(%1)';
 Blockly.Msg.MOTION_TURNLEFT = 'self.turn_left_degrees(%1)';
-Blockly.Msg.MOTION_TURNRIGHT = 'self.turn_right_degress(%1)';
+Blockly.Msg.MOTION_TURNRIGHT = 'self.turn_right_degrees(%1)';
 Blockly.Msg.MOTION_POINTINDIRECTION = 'self.point_in_direction(%1)';
 Blockly.Msg.MOTION_POINTTOWARDS = 'self.point_towards(%1)';
 Blockly.Msg.MOTION_POINTTOWARDS_POINTER = 'mouse-pointer';
@@ -221,6 +222,7 @@ Blockly.Msg.OPERATORS_MATHOP_10EXP = '10 ^';
 Blockly.Msg.PROCEDURES_DEFINITION = 'def %1:';
 Blockly.Msg.START_PROCEDURES_DEFINITION = 'def %1(self):';
 
+
 // Sensing blocks
 Blockly.Msg.SENSING_TOUCHINGOBJECT = 'self.touching(%1)';
 Blockly.Msg.SENSING_TOUCHINGOBJECT_POINTER = 'mouse-pointer';
@@ -229,7 +231,7 @@ Blockly.Msg.SENSING_TOUCHINGCOLOR = 'self.touching_color(%1)';
 Blockly.Msg.SENSING_COLORISTOUCHINGCOLOR = 'self.color_is_touching(%1, %2)';
 Blockly.Msg.SENSING_DISTANCETO = 'self.distance_to(%1)';
 Blockly.Msg.SENSING_DISTANCETO_POINTER = 'mouse-pointer';
-Blockly.Msg.SENSING_ASKANDWAIT = 'stage.ask_and_wait(%1)';
+Blockly.Msg.SENSING_ASKANDWAIT = 'self.ask_and_wait(%1)';
 Blockly.Msg.SENSING_ASK_TEXT = 'What\'s your name?';
 Blockly.Msg.SENSING_ANSWER = 'stage.answer';
 Blockly.Msg.SENSING_KEYPRESSED = 'stage.key_pressed(%1)';
@@ -271,7 +273,7 @@ Blockly.Msg.SOUND_PLAY = 'stage.start_sound(%1)';
 Blockly.Msg.SOUND_PLAYUNTILDONE = 'stage.play_sound_until_done(%1)';
 Blockly.Msg.SOUND_STOPALLSOUNDS = 'stage.stop_all_sounds()';
 Blockly.Msg.SOUND_SETEFFECTO = 'stage.set_sound_effect_to(%1, %2)';
-Blockly.Msg.SOUND_CHANGEEFFECTBY = 'stage.change_sound_effect(%1. %2)';
+Blockly.Msg.SOUND_CHANGEEFFECTBY = 'stage.change_sound_effect(%1, %2)';
 Blockly.Msg.SOUND_CLEAREFFECTS = 'stage.clear_sound_effects()';
 Blockly.Msg.SOUND_EFFECTS_PITCH = 'pitch';
 Blockly.Msg.SOUND_EFFECTS_PAN = 'pan left/right';

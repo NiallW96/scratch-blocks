@@ -86,7 +86,7 @@ Blockly.ScratchBlocks.VerticalExtensions.SHAPE_STATEMENT = function() {
  * @readonly
  */
 Blockly.ScratchBlocks.VerticalExtensions.SHAPE_HAT = function() {
-  this.setInputsInline(false);
+  //this.setInputsInline(false);
   this.setNextStatement(true, null);
 };
 
