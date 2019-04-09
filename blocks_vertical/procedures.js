@@ -630,16 +630,11 @@ Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal = function() {
  */
 Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
   Blockly.WidgetDiv.hide(true);
-  if(this.displayNames_.length >= 1){
-     if(this.procCode_.endsWith(", self )")){
-         this.procCode_ = this.procCode_.replace(", self )", "");
-     }
-     this.procCode_ = this.procCode_ + ' ,';
+  if(this.procCode_.endsWith(")")){
+     this.procCode_ = this.procCode_.replace(")", "");
   }
-  else if(this.procCode_.endsWith(" self )")){
-     this.procCode_ = this.procCode_.replace(" self )", "");
-  }
-  this.procCode_ = this.procCode_ + ' %b , self )';
+  this.procCode_ = this.procCode_ + ' ,';
+  this.procCode_ = this.procCode_ + ' %b)';
   this.displayNames_.push('boolean');
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('false');
@@ -654,17 +649,12 @@ Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
  */
 Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal = function() {
   Blockly.WidgetDiv.hide(true);
-  if(this.displayNames_.length >= 1){
-     if(this.procCode_.endsWith(", self )")){
-         this.procCode_ = this.procCode_.replace(", self )", "");
-     }
-     this.procCode_ = this.procCode_ + ' ,';
+  if(this.procCode_.endsWith(")")){
+     this.procCode_ = this.procCode_.replace(")", "");
   }
-  else if(this.procCode_.endsWith(" self )")){
-     this.procCode_ = this.procCode_.replace(" self )", "");
-  }
+  this.procCode_ = this.procCode_ + ' ,';
  
-  this.procCode_ = this.procCode_ + ' %s , self )';
+  this.procCode_ = this.procCode_ + ' %s)';
   this.displayNames_.push('number or text');
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('');
